@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <title>PyForm</title>
+    <style>
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    
+        input[type=submit] {
+            width: 100%;
+            background-color: #4c4faf;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    
+        p {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="false">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="John"><br>
+        <select name="countries" id="countries" onchange="load_options()">
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Uganda">Uganda</option>
+        </select><br>
+        <input pys-onClick="sub" type="submit" id="btn-form" value="submit"><br>
+    </form>
+    <p id="output"></p>
+</body>
+<py-script>
+
+    def sub:
+        <!-- declare a variable to hold the value of "output!" -->
+        idk = Element('output').value
+        idk.write(f"{Element('name').value} is from {Element('countries').value}\n")
+
+</py-script>
+</html>
