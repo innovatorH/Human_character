@@ -44,7 +44,7 @@
     <form onsubmit="false">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" value="John"><br>
-        <select name="countries" id="countries" onchange="load_options()">
+        <select name="countries" id="countries">
             <option value="Ethiopia">Ethiopia</option>
             <option value="Kenya">Kenya</option>
             <option value="Uganda">Uganda</option>
@@ -54,11 +54,10 @@
     <p id="output"></p>
 
     <py-script>
-
-        def sub(*args, **kwargs):
+        def sub(*args,**kwargs):
             <!-- declare a variable to hold the value of "output!" -->
-            idk = Element('output').value
-            idk.write(f"{Element('name').value} is from {Element('countries').value}\n")
+            result_place = Element('output')
+            result_place.write(f"{Element('name').value} is a good human from {Element('countries').value}")
 
     </py-script>
 </body>
