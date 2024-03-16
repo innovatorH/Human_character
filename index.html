@@ -52,13 +52,14 @@
         <input pys-onClick="sub" type="submit" id="btn-form" value="submit"><br>
     </form>
     <p id="output"></p>
+
+    <py-script>
+
+        def sub(*args, **kwargs):
+            <!-- declare a variable to hold the value of "output!" -->
+            idk = Element('output').value
+            idk.write(f"{Element('name').value} is from {Element('countries').value}\n")
+
+    </py-script>
 </body>
-<py-script>
-
-    def sub:
-        <!-- declare a variable to hold the value of "output!" -->
-        idk = Element('output').value
-        idk.write(f"{Element('name').value} is from {Element('countries').value}\n")
-
-</py-script>
 </html>
